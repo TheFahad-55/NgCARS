@@ -1,5 +1,5 @@
 # NgCars
-
+NgCars is software whcuh can predict the price of used cars.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
 
 ## Development server
