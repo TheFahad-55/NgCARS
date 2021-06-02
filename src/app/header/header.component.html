@@ -1,0 +1,21 @@
+<div [ngClass]="{'navbar-fixed':fixedNav===true }">
+    <nav class="no-shadows" [ngClass]="{white: navWhite===true }" [ngStyle]="{'background-color':navColor}">
+        <div class="nav-wrapper">
+            <a [routerLink]="['/']" class="brand-logo" style="padding-left:10px" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">NgCars</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons "
+                style="color:#323450; font-size:40px;">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/price-predictor']" *ngIf="isLogin">Predictor</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/signup']" *ngIf="!isLogin">Signup</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']" style="margin-right: 5px;" *ngIf="!isLogin">Login</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/logout']" *ngIf="isLogin">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<ul class="sidenav" id="mobile-demo">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/price-predictor']" *ngIf="isLogin">Predictor</a></li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/signup']" *ngIf="!isLogin">Singup</a></li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']" style="margin-right: 5px;" *ngIf="!isLogin">Login</a></li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/logout']" *ngIf="isLogin">Logout</a></li>
+</ul>

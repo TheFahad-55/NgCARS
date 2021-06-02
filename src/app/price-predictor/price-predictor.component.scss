@@ -1,0 +1,117 @@
+.form {
+    width: 800px;
+    height: 1100px;
+    background-color: #fff;
+    margin: 4.5rem 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+    display: flex;
+    justify-content: center;
+}
+
+// .line {
+//     width: 200px;
+//     height: 2px;
+//     background-color: #2f80ed;
+//     border: none;
+//     margin: auto;
+// }
+.form-container {
+    background-color: #e5e5e5;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+
+.content {
+    font-weight: bold;
+    color: #323450;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 2rem;
+}
+
+.input-field input:focus,
+.input-field textarea:focus {
+    border-bottom: 1px solid #2f80ed;
+    i.icon {
+        color: #2f80ed;
+    }
+}
+
+
+/* label focus color */
+
+.input-field input[type=text]:focus+label {
+    color: #2f80ed!important;
+}
+
+.input-field,
+textarea {
+    width: 300px !important;
+}
+
+.checkboxes {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    .check {
+        margin: 2rem;
+    }
+}
+
+input[type="checkbox"].filled-in:checked+span:not(.lever):after {
+    border: 2px solid #2f80ed;
+    background-color: #2f80ed;
+}
+
+.button {
+    width: 180px;
+    height: 60px;
+    border: none;
+    color: #fff;
+    background-color: #2f80ed;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+//Media Queries..
+@media only screen and (max-width:810px) {
+    .form {
+        width: 700px;
+    }
+}
+
+@media only screen and (max-width:710px) {
+    .form {
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .form {
+        width: 480px;
+        height: 2000px;
+        .form-data {
+            form {
+                .input-field,
+                h3 {
+                    margin: 1.5rem 4rem;
+                }
+            }
+        }
+    }
+    .checkboxes {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        .check {
+            margin: 1.5rem 4rem;
+        }
+    }
+}
+
+@media only screen and (max-width:490px) {
+    .form {
+        width: 400px;
+    }
+}

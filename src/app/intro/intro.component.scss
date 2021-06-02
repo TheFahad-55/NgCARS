@@ -1,0 +1,182 @@
+.geeks {
+    padding: 150px;
+    text-align: center;
+}
+
+section {
+    width: 100%;
+    min-height: 300px;
+}
+
+.pattern {
+    position: relative;
+    background-color: #9bcde5;
+}
+
+.pattern:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background: url(../../assets/wave.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+//jeep
+.jeep {
+    width: 600px;
+    height: 600px;
+}
+
+//Media Queries...
+//Jepp image
+@media only screen and (max-width:1380px) {
+    .jeep {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width:1180px) {
+    .jeep {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width:970px) {
+    .jeep {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width:860px) {
+    .jeep {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width:760px) {
+    .jeep {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .jeep {
+        margin-left: 0rem !important;
+        height: 400px;
+    }
+    .content {
+        margin-bottom: 0rem !important;
+    }
+    .features1 {
+        h3 {
+            padding-top: 0 !important;
+        }
+    }
+}
+
+//Cards....
+.cards {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-gap: 1rem;
+}
+
+//cards
+@media only screen and (max-width:970px) {
+    .cards {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-gap: 2rem;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .cards {
+        display: grid;
+        grid-template-columns: 2fr;
+    }
+}
+
+//content
+.content {
+    z-index: 1;
+    position: relative;
+    bottom: 200px;
+    h1 {
+        font-size: 50px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        color: #323450;
+    }
+    p {
+        font-size: 19px;
+        color: #585978;
+    }
+}
+
+.button {
+    width: 180px;
+    height: 60px;
+    border: none;
+    color: #fff;
+    background-color: #2f80ed;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.feature {
+    height: 250px;
+    padding: 60px 35px;
+    border-radius: 30px;
+    min-height: 350px;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 25px rgb(218 211 211 / 30%);
+    text-align: center;
+    border-bottom: 5px solid #585978;
+    transition: all .3s ease-out 0s;
+}
+
+.feature:hover {
+    border-bottom: 4px solid #2f80ed;
+    box-shadow: 0 2px 0px #2f80ed;
+}
+
+.icon {
+    color: #2f80ed;
+}
+
+.features1,
+.features {
+    margin: 0 7rem;
+}
+
+.team {
+    background-color: #e5e5e5;
+    height: 900px;
+}
+
+@media only screen and (max-width:600px) {
+    .team {
+        height: 1500px;
+    }
+}
+
+.card {
+    box-shadow: none!important;
+}
+
+//Our mission...
+.mission {
+    height: 250px;
+}

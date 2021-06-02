@@ -1,0 +1,57 @@
+<div class="signup-container">
+
+    <div class="singup">
+        <app-spinner *ngIf="isLoading"></app-spinner>
+        <div class="container" *ngIf="!isLoading">
+            <div class="row">
+                <div class="col m6" style="margin-top:3rem">
+                    <h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight:bold">Sign Up</h4>
+
+                    <form (ngSubmit)="onRegisterUser(f)" #f="ngForm">
+                        <div class="input-field col s12 ">
+                            <i class="material-icons prefix icon">person</i>
+                            <input id="name" type="text" class="validate" name="name" ngModel required minlength="3" #name="ngModel">
+                            <label for="name">Enter Your Name</label>
+                            <span style="font-weight:bold;" *ngIf="name.invalid && (name.dirty || name.touched)">Name  must be altleast 3 characters.</span>
+                        </div>
+                        <div class="input-field col s12 " style="margin-left:0">
+                            <i class="material-icons prefix icon">email</i>
+                            <input id="email" type="email" class="validate" name="email" ngModel required email #email="ngModel">
+                            <label for="email">Enter Your Email</label>
+                            <span style="font-weight:bold" *ngIf="email.invalid && (email.dirty || email.touched)">Please enter valid email</span>
+                        </div>
+                        <div class="input-field col s12 " style="margin-left:0">
+                            <i class="material-icons prefix icon">security</i>
+                            <input id="password" type="password" class="validate" name="password" ngModel required minlength="5" #password="ngModel">
+                            <label for="password">Enter Your Password</label>
+                            <span style="font-weight:bold" *ngIf="password.invalid && (password.dirty || password.touched)">Password  must be altleast 5 characters.</span>
+                        </div>
+                        <div>
+                            <p style="margin-bottom:1rem"> <strong>Gender</strong></p>
+                            <p>
+                                <label style="margin-right:1rem">
+                                      <input type="checkbox" class="filled-in" name="male" ngModel/>
+                                      <span style="font-weight:bold">Male</span>
+                                    </label>
+                                <label>
+                                        <input type="checkbox" class="filled-in" name="female"
+                                        ngModel />
+                                        <span style="font-weight:bold">Female</span>
+                                      </label>
+                            </p>
+                        </div>
+                        <button class="button hoverable waves-effect " type="submit" [disabled]="f.invalid">Register</button>
+                    </form>
+
+
+                </div>
+                <div class="col m6">
+
+                    <img src="../../assets/signup.svg" alt="OOps" style="margin-left: 5rem;" style="margin-top:5rem" width="430px" height="400px">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

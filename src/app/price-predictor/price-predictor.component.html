@@ -1,0 +1,187 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
+
+<!-- Price and Review Model -->
+<div id="modal1" class="modal text-center">
+    <div class="modal-content">
+        <h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Predicted Price</h4>
+        <p>The Predicted Price of Your Car is Rs: {{price}}</p>
+        <div style="margin-top: 1rem;">
+            <a type="button" (click)="starOne()" [ngStyle]="{'cursor':'pointer','color':stars>=1?'#2f80ed':'black'}"><i class="material-icons" style="font-size:3rem">star</i></a>
+            <a type="button" (click)="starTwo()" [ngStyle]="{'cursor':'pointer','color':stars>=2?'#2f80ed':'black'}"><i class="material-icons" style="font-size:3rem">star</i></a>
+            <a type="button" (click)="starThree()" [ngStyle]="{'cursor':'pointer','color':stars>=3?'#2f80ed':'black'}"> <i class="material-icons" style="font-size:3rem">star</i></a>
+            <a type="button" (click)="starFour()" [ngStyle]="{'cursor':'pointer','color':stars>=4?'#2f80ed':'black'}"> <i class="material-icons" style="font-size:3rem">star</i></a>
+            <a type="button" (click)="starFive()" [ngStyle]="{'cursor':'pointer','color':stars>=5?'#2f80ed':'black'}"><i class="material-icons" style="font-size:3rem">star</i></a>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea" #feedback></textarea>
+                <label for="textarea1">Enter Feedback</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="modal-close waves-effect waves-blue btn" type="button" style="background-color:#2f80ed" (click)="onReview(feedback)" [disabled]="stars===null">Submit Review</button>
+        <a class="modal-close waves-effect waves-blue btn-flat" (click)="onRemoveReview(feedback)">Not Now</a>
+    </div>
+</div>
+
+
+<div class="form-container center-align" *ngIf="!isLoading">
+    <div class="form">
+
+        <div class="form-data">
+
+            <h3 class="content">Price Predictor</h3>
+
+            <form>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input type="text" id="autocomplete-input1" class="company" name="company" #company>
+                        <label for="autocomplete-input1">Enter Company Name:</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" id="autocomplete-input2" class="model" name="model" #model>
+                        <label for="autocomplete-input2">Enter Model Name:</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input type="text" id="autocomplete-input3" class="myear" name="myear" #myear>
+                        <label for="autocomplete-input3">Enter Model Year:</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" id="autocomplete-input4" class="city" name="city" #city>
+                        <label for="autocomplete-input4">Enter Registered City:</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input type="text" id="autocomplete-input5" class="mileage" name="mileage" #mileage>
+                        <label for="autocomplete-input5">Enter Car Mileage:</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" id="autocomplete-input6" class="color" name="color" #color>
+                        <label for="autocomplete-input6">Enter Car Color:</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input type="text" id="autocomplete-input7" class="assembly" name="assembly" #assembly>
+                        <label for="autocomplete-input7">Enter Car Assembly:</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" id="autocomplete-input8" class="transmission" name="transmission" #transmission>
+                        <label for="autocomplete-input8">Enter Car Transmission:</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input type="text" id="autocomplete-input9" class="etype" name="etype" #etype>
+                        <label for="autocomplete-input9">Enter Engine Type:</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" id="autocomplete-input10" class="ecapacity" name="ecapacity" #ecapacity>
+                        <label for="autocomplete-input10">Enter Engine Capacity:</label>
+                    </div>
+                </div>
+
+                <!-- CheckBoxes..... -->
+                <div class="checkboxes">
+                    <p class="check">
+                        <label>
+                            <input type="checkbox" class="filled-in" 
+                            name="cruiseControl" #cruiseControl/><span style="font-weight:bold">Cruise Control</span>
+                        </label>
+                    </p>
+
+                    <p class="check">
+                        <label>
+                            <input type="checkbox" class="filled-in" 
+                            name="powerMirrors" #powerMirrors/><span style="font-weight:bold">Power Mirrors</span>
+                        </label>
+                    </p>
+
+                    <p class="check">
+                        <label>
+                            <input type="checkbox" class="filled-in"
+                            name="airConditioner" #airConditioner /><span style="font-weight:bold">Air Condiotioner</span>
+                        </label>
+                    </p>
+
+                    <p class="check">
+                        <label>
+                            <input type="checkbox" class="filled-in"
+                            name="powerSteering" #powerSteering /><span style="font-weight:bold">Power Steering</span>
+                        </label>
+                    </p>
+
+                    <p class="check">
+                        <label>
+                            <input type="checkbox" class="filled-in" 
+                            name="powerLocks"  #powerLocks/><span style="font-weight:bold">Power Locks</span>
+                        </label>
+                    </p>
+
+                    <p class="check">
+                        <label>
+                            <input type="checkbox" class="filled-in" 
+                            name="powerWindows" #powerWindows /><span style="font-weight:bold">Power Windows</span>
+                        </label>
+                    </p>
+
+                    <p class="check">
+                        <label>
+                            <input type="checkbox" class="filled-in"
+                            name="immobilizerKey"  #immobilizerKey/><span style="font-weight:bold">Immobilizer Key</span>
+                        </label>
+                    </p>
+
+                    <p class="check">
+                        <label>
+                            <input type="checkbox" class="filled-in" 
+                            name="abs" #abs/><span style="font-weight:bold">ABS Breaks</span>
+                        </label>
+                    </p>
+
+                    <p class="check">
+                        <label>
+                            <input type="checkbox" class="filled-in"
+                            name="sunRoof"  #sunRoof/><span style="font-weight:bold">Sun Roof</span>
+                        </label>
+                    </p>
+
+                    <p class="check" style="margin-right: 4.5rem;">
+                        <label>
+                            <input type="checkbox" class="filled-in" 
+                            name="alloyRims" #alloyRims/><span style="font-weight:bold">Alloy Rims</span>
+                        </label>
+                    </p>
+
+                    <p class="check">
+                        <label>
+                            <input type="checkbox" class="filled-in" 
+                            name="airBags" #airBags/><span style="font-weight:bold">Air Bags</span>
+                        </label>
+                    </p>
+                </div>
+
+
+
+
+                <button class="button hoverable waves-effect " type="button" style="margin-top:2.5rem" (click)="onPredictPrice(company,model,myear,city,mileage,color,
+                    assembly,transmission,etype,ecapacity,cruiseControl,powerMirrors,
+                    airConditioner,powerSteering,powerLocks,powerWindows,immobilizerKey,abs,sunRoof,
+                    alloyRims,airBags)">Predict Price</button>
+
+
+            </form>
+
+
+        </div>
+
+    </div>

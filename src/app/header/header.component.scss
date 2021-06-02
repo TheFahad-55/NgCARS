@@ -1,0 +1,48 @@
+nav ul li a {
+    color: #323450;
+    font-size: 20px;
+}
+
+nav {
+    // background-color: #9bcde5;
+    // // background-color: #fff;
+    height: 100px;
+    padding: 0 7rem;
+    ul li a:hover {
+        display: inline-block;
+        background: transparent;
+        color: #2f80ed;
+    }
+    ul li.active {
+        border-bottom: 4px solid #2f80ed;
+        color: #2f80ed;
+        display: inline-block;
+        background: transparent;
+        a {
+            color: #2f80ed;
+        }
+    }
+}
+
+.brand-logo {
+    color: #323450;
+}
+
+.brand-logo:hover {
+    color: #2f80ed;
+}
+
+.brand-logo,
+li {
+    margin-top: 1.5rem;
+}
+
+.no-shadows {
+    box-shadow: none!important;
+}
+
+@media only screen and (max-width:900px) {
+    nav {
+        padding: 0;
+    }
+}

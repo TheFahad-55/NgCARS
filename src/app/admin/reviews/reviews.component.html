@@ -1,0 +1,40 @@
+<!-- <app-spinner *ngIf="isLoading" class="inject"></app-spinner> -->
+<div class="users inject">
+
+    <h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Reviews</h4>
+    <app-spinner class="inject1" *ngIf="isLoading"></app-spinner>
+    <div class="row" *ngIf="reviews.length>0&&!isLoading">
+        <div class="col m8">
+            <table class="responsive-table highlight striped">
+                <thead>
+                    <tr>
+                        <th> Username</th>
+                        <th> Car Name</th>
+                        <th> Feedback</th>
+                        <th> Stars</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let review of reviews">
+                    <tr>
+                        <td *ngIf="review.user">{{review.user.name|titlecase}}</td>
+                        <td *ngIf="!review.user||review.user===null">User Removed</td>
+                        <td>{{ review.carName}}</td>
+
+                        <td>{{review.feedback|titlecase}}</td>
+                        <td>{{review.stars}}</td>
+                        <td>{{review.date|date:'short'}}</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row inject" *ngIf="reviews.length<1&&!isLoading">
+    <div class="col m8">
+        <p style="font-weight: bold;">Reviews not found!</p>
+    </div>
+</div>

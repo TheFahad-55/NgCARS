@@ -1,0 +1,46 @@
+.sidebar {
+    height: 100%;
+    width: 300px;
+    background-color: #e5e5e5;
+    margin: 0;
+    ul {
+        text-decoration: none;
+    }
+    li {
+        padding: 20px;
+        display: block;
+        a {
+            color: black;
+        }
+    }
+    li:hover {
+        background-color: #b9b7b7;
+        // .icon {
+        //     color: #fff;
+        // }
+        // a,
+        // p {
+        //     color: #fff;
+        // }
+    }
+}
+
+.active {
+    background-color: #b9b7b7;
+    // .icon {
+    //     color: #fff;
+    // }
+    // a {
+    //     color: #fff !important;
+    // }
+}
+
+// .avatar {
+//     height: 200px;
+//     background-image: url("../../../assets/ford.jpg");
+//     background-repeat: no-repeat;
+//     background-size: 300px 200px;
+//     a {
+//         color: white;
+//     }
+// }

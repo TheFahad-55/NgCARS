@@ -1,0 +1,13 @@
+<div class="sidebar">
+    <ul>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a [routerLink]="['/admin/home']"><img src="../../../assets/rana1.jpeg" width="120px" height="110px" class="circle">
+                <p>Fahad Qayyum</p>
+                <p>fahadqayyum668@gmail.com</p>
+            </a>
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> <i class="fas fa-users fa-2x icon" style="margin-right:1rem"></i><a [routerLink]="['/admin/users']">Users</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fas fa-comments icon fa-2x" style="margin-right:1rem"></i><a [routerLink]="['/admin/reviews']">Reviews</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fas fa-sign-out-alt fa-2x" style="margin-right:1rem"></i><a type="button" style="cursor:pointer" (click)="onLogout()">Logout</a></li>
+    </ul>
+</div>

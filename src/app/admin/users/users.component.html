@@ -1,0 +1,39 @@
+<!-- <app-spinner *ngIf="isLoading" class="inject"></app-spinner> -->
+<div class="users inject">
+
+    <h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Users</h4>
+
+    <app-spinner class="inject1" *ngIf="isLoading"></app-spinner>
+
+    <div class="row" *ngIf="users.length>0&&!isLoading">
+        <div class="col m8">
+            <table class="responsive-table highlight striped">
+                <thead>
+                    <tr>
+                        <th> Name</th>
+                        <th> Email</th>
+                        <th> Gender</th>
+                        <th>Remove User</th>
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let user of users">
+                    <tr>
+                        <td>{{user.name|titlecase}}</td>
+                        <td>{{user.email|titlecase}}</td>
+                        <td>{{user.gender|titlecase}}</td>
+                        <td>
+                            <Button class="btn btn-small red darken-4 hoverable waves-effect" (click)="onDeleteUser(user._id)">Remove</Button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row inject" *ngIf="users.length<1&&!isLoading">
+    <div class="col m8">
+        <p style="font-weight: bold;">Users not found!</p>
+    </div>
+</div>

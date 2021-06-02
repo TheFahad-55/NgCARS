@@ -1,0 +1,8 @@
+<div class="row inject">
+    <div class="col m12">
+        <h3>Welcome To NgCars</h3>
+        <app-spinner class="inject1" *ngIf="isLoading"></app-spinner>
+        <p *ngIf="rating&&!isLoading" style="color:#323450; font-size: 19px;">The Average Rating Of The Application is: <span style="font-weight: bold;">{{rating}}</span><i class="fas fa-star"></i></p>
+        <p *ngIf="!rating&&!isLoading" style="font-weight: bold;">No Reviews Yet!</p>
+    </div>
+</div>

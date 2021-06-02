@@ -1,0 +1,24 @@
+.footer {
+    width: 100%;
+    background: #fff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    p,
+    div {
+        margin: 1rem;
+    }
+    .links {
+        display: flex;
+    }
+}
+
+.icon {
+    margin: 1rem;
+}
+
+.icon:hover {
+    color: #f50057 !important;
+}
